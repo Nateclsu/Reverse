@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
   <head>
-    <title>App Name: A Coding Project By Nate Canterbury</title>
+    <title>Reverse: A Coding Project By Nate Canterbury</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -17,6 +17,8 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="https://use.typekit.net/nqh4plj.css">
 
     <script
       src="https://kit.fontawesome.com/5db21ba9c6.js"
@@ -39,8 +41,8 @@
             width="40"
             height="35"
           />
-          APP NAME</a
-        >
+          </a>
+          <a class="navbar-brand logoFont">REVERSE</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -76,21 +78,66 @@
      <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME.</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for REVERSE.</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function helloWorld() {
-                            alert("Hello World!");
-                        }
+                      //Get the string from the page
+                      //Controller function
+                      
+                      function getValue() {
+                          document.getElementById("alert").classList.add("invisible")
+                      
+                          let userString = document.getElementById("userString").value;
+                      
+                          let revString = reverseString(userString);
+                      
+                          displayString(revString);
+                      }
+                      
+                      //Reverse the string
+                      //Logic function
+                      function reverseString(userString) {
+                      
+                          let revString = [];
+                      
+                          //Let name = Bobby
+                          //name[0] = "B";
+                          //name[4] = "y";
+                          //last pos in the array is name.length - 1 (keep in my name.length is from 1 --> 5)
+                      
+                          for(let index = userString.length - 1; index >= 0; index--) {
+                              revString += userString[index];
+                          }
+                      
+                          return revString;
+                      }
+                      
+                      //Display the reversed string to the user
+                      //View Function
+                      function displayString(revString) {
+                          //Write to page
+                          document.getElementById("msg").innerHTML = `Your string reversed is: ${revString}`;
+                          //Show the alert box
+                          document.getElementById("alert").classList.remove("invisible");
+                      
+                      }
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World."</p>
+                    <h5>Get Value</h5>
+                    <p>The getValue() function checks that the alert is set to 'invisible' at the start. Then it retrieves the value of the users inputed string.
+                      Next, it calls revString to reverse the given string and, finally, it calls displayString to display the reversed string to the user.
+                    </p>
+                    <hr>
+                    <h5>Reverse String</h5>
+                    <p>The reverseString() function uses a for loop to create a new string with the characters from the original string in reverse order. It then returns
+                      the reversed string.</p>
+                    <hr>
+                    <h5>Display String</h5>
+                    <p>The displayString() function uses a template literal to display the reversed string to the user. I removes the 'invisible' designation from the 
+                      alert, so the user sees the alert and the reversed string. </p>
                 </div>
             </div>
         </div>
@@ -113,8 +160,8 @@
               <img
                 src="img/Nate Canterbury.png"
                 alt="Nate Canterbury Logo"
-                height="70"
-                width="300"
+                height="50"
+                width="250"
               />
             </div>
             <div
@@ -122,12 +169,12 @@
             >
               <div class="row">
                 <div class="col social">
-                  <a href="#" target="_blank"
+                  <a href="https://www.linkedin.com/feed/" target="_blank"
                     ><i class="fab fa-linkedin fa-2x" style="color: #3c5291"></i
                   ></a>
                 </div>
                 <div class="col social">
-                  <a href="#" target="_blank"
+                  <a href="https://github.com/Nateclsu" target="_blank"
                     ><i class="fab fa-github fa-2x" style="color: #3c5291"></i
                   ></a>
                 </div>
